@@ -7,6 +7,8 @@ func _ready():
 
 
 func _on_StompDetector_body_entered(body):
+	# if the position y of body is lower than stompdetector, do nothing
+	# else disable collision and kill enemy
 	if body.global_position.y > get_node("StompDetector").global_position.y:
 		return
 		
