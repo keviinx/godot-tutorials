@@ -10,7 +10,7 @@ func _on_EnemyDetector_area_entered(area):
 
 func _on_EnemyDetector_body_entered(body):
 	# kills the player when enemy entered the area
-	queue_free()
+	die()
 
 
 func _physics_process(delta):
@@ -56,3 +56,8 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	var out := linear_velocity
 	out.y = -impulse
 	return out
+
+
+func die():
+	PlayerData.deaths += 1
+	queue_free()

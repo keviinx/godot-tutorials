@@ -12,7 +12,7 @@ extents = Vector2( 43, 53 )
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 8
 script = ExtResource( 2 )
-speed = Vector2( 800, 1000 )
+speed = Vector2( 800, 1500 )
 stomp_impulse = 1600.0
 
 [node name="player" type="Sprite" parent="."]

@@ -1,4 +1,8 @@
-extends "res://src/Actors/Actor.gd"
+extends Actor
+
+export var score := 100
+
+onready var stomp_area: Area2D = $StompDetector
 
 func _ready():
 	# disable physics process when not in view
@@ -13,13 +17,13 @@ func _on_StompDetector_body_entered(body):
 		return
 		
 	get_node("CollisionShape2D").disabled = true
-	queue_free()
+	die()
 
 
 func _physics_process(delta):
-	# apply gravity every delta
-	_velocity.y += gravity * delta
-	if is_on_wall():
-		# change direction when hit wall
-		_velocity *= -1.0
+	_velocity.x *= -1 if is_on_wall() else 1
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
+
+func die():
+	queue_free()
+	PlayerData.score += score
