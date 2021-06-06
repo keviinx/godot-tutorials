@@ -13,12 +13,17 @@ onready var pause_title: Label = get_node("PauseOverlay/Title")
 func _ready():
 	PlayerData.connect("score_updated", self, "update_interface")
 	PlayerData.connect("player_died", self, "_on_PlayerData_player_died")
+	PlayerData.connect("reset", self, "on_Player_reset")
 	update_interface()
 
 
 func _on_PlayerData_player_died():
 	self.paused = true
 	pause_title.text = DIED_MESSAGE
+
+
+func on_Player_reset():
+	self.paused = false
 
 
 func _unhandled_input(event):
