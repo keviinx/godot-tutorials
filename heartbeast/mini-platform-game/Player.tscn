@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Sky.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -51,3 +52,13 @@ animation = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
 shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="Sprite" parent="ParallaxBackground"]
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 0, -64 )
