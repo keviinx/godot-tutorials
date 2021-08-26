@@ -1,5 +1,7 @@
 # godot-tutorials
 
+clear-code/pong-godot - https://youtu.be/kr1BoEbuveI
+
 gdquest/2d-dodge-the-creeps - https://youtu.be/WEt2JHEe-do
 
 gdquest/platformer - https://youtu.be/Mc13Z2gboEk
