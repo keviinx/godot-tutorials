@@ -15,4 +15,6 @@ func _ready():
 
 # Called during the physics processing step of the main loop
 func _physics_process(delta):
-	move_and_slide(velocity * speed)
+	var collision_object = move_and_collide(velocity * speed * delta)
+	if collision_object:
+		velocity = velocity.bounce(collision_object.normal)
