@@ -1,9 +1,7 @@
 extends KinematicBody2D
 
-
 # Member variable
 var speed = 400
-
 
 # Called during the physics processing step of the main loop
 func _physics_process(delta):

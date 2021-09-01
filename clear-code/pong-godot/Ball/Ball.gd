@@ -1,10 +1,8 @@
 extends KinematicBody2D
 
-
 # Member variable
 var speed = 600
 var velocity = Vector2.ZERO
-
 
 # Called when the node is "ready"
 func _ready():
